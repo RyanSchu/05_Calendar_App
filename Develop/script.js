@@ -5,7 +5,6 @@ var current = moment()
 
 class Calendar {
     constructor(am9,am10,am11,pm12,pm1,pm2,pm3,pm4,pm5) {
-
         this.am9 = am9,
         this.am10= am10,
         this.am11 = am11,
@@ -27,8 +26,28 @@ function getLocalStorage() {
     }
 }
 
+function renderTimeBlocks(calendarObject) {
+    let keys=Object.keys(calendarObject)
+    for ( i = 0; i < keys.length; i++) {
+        //  row contains timeblock which contains all of hour, description, and save button
+        let row=document.createElement("div")
+        row.setAttribute("class","row timeblock")
+        let hour=document.createElement("div")
+        hour.textContent = "AM"
+        hour.setAttribute("class","hour")
+        let description = document.createElement("textarea")
+        description.setAttribute("class","description")
+        let button = document.createElement("button")
+        button.setAttribute("class","saveBtn")
+        row.appendChild(hour)
+        row.appendChild(description)
+        row.appendChild(button)
+        container.appendChild(row)
+    }
+}
 
+dateHeader.textContent = current.format("MMMM Do, YYYY")
 
 calendarObject = getLocalStorage()
-dateHeader.textContent = current.format("MMMM Do, YYYY")
+renderTimeBlocks(calendarObject)
 
