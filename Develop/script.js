@@ -46,13 +46,13 @@ function renderTimeBlocks(calendarObject) {
     }
 }
 
-function reformatTime(key) {
+function reformatKey(key) {
     let text = key.replace(/[apm]+/i,"") + " " + key.slice(0,2)
     return text
 }
 
 function checkRelativeToNow(time) {
-    let text = reformatTime(time)
+    let text = reformatKey(time)
     text = moment(text,"h a")
     console.log(text.format("h a"))
     if (text.isBefore(currentHour)) {
