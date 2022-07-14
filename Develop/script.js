@@ -33,7 +33,7 @@ function renderTimeBlocks(calendarObject) {
         let row=document.createElement("form")
         row.setAttribute("class","row timeblock w-100")
         let hour=document.createElement("div")
-        hour.textContent = "AM"
+        hour.textContent = reformatKey(keys[i])
         hour.setAttribute("class","hour col-1")
         let description = document.createElement("textarea")
         description.setAttribute("class","description col-10 " + checkRelativeToNow(keys[i]))
@@ -42,6 +42,7 @@ function renderTimeBlocks(calendarObject) {
         let button = document.createElement("button")
         button.setAttribute("class","saveBtn col-1")
         button.setAttribute("name",keys[i])
+        button.textContent = '\u{1F4BE}'
         button.addEventListener("click",saveContent)
         row.appendChild(hour)
         row.appendChild(description)
