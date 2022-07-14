@@ -27,3 +27,28 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
+### pseudocode
+
+```
+first get hour
+also get any objects from local storage
+set header
+get an array of hours
+for each hour
+  create a row which should contain an hour, a textarea description, and a save button
+  also compare hour to current time
+  add correct content
+  add event listener to button
+  append children to row and row to document
+  
+event listener
+  should get value of textarea of the corresponding hour 
+  -they should share an attribute that ties them together
+  then updates an object at the corresponding attribute
+  object that saves in local storage
+
+```
+
+
+https://ryanschu.github.io/05_Calendar_App/
+
