@@ -50,5 +50,5 @@ event listener
 ```
 
 
-https://ryanschu.github.io/05_Calendar_App/
+https://ryanschu.github.io/05_Calendar_App/index.html
 
